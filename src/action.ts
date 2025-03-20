@@ -103,7 +103,7 @@ export async function action(): Promise<void> {
     )
     core.setOutput(
         'is-files-changed',
-        project.changed.percentage !== null ? 'true' : 'false'
+        project.changed.percentage !== undefined ? 'true' : 'false'
     );
 
     const skip = skipIfNoChanges && project.modules.length === 0

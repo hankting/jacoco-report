@@ -124,7 +124,7 @@ function action() {
             core.setOutput('coverage-overall', parseFloat(((_d = project.overall.percentage) !== null && _d !== void 0 ? _d : 0).toFixed(2)));
             core.setOutput('coverage-changed-files', parseFloat(project['coverage-changed-files'].toFixed(2)));
             core.setOutput('coverage-changed-percentage', parseFloat(((_d = project.changed.percentage) !== null && _d !== void 0 ? _d : 0).toFixed(2)));
-            core.setOutput('is-files-changed', project.changed.percentage !== null ? 'true' : 'false');
+            core.setOutput('is-files-changed', project.changed.percentage !== undefined ? 'true' : 'false');
             const skip = skipIfNoChanges && project.modules.length === 0;
             if (debugMode)
                 core.info(`skip: ${skip}`);
