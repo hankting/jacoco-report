@@ -130,7 +130,7 @@ function action() {
                 core.info(`skip: ${skip}`);
             if (debugMode)
                 core.info(`prNumber: ${prNumber}`);
-            if (prNumber != null && !skip) {
+            if (project.changed.percentage !== undefined && !skip) {
                 const emoji = {
                     pass: passEmoji,
                     fail: failEmoji,
