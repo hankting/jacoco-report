@@ -106,10 +106,10 @@ export async function action(): Promise<void> {
         project.changed.percentage !== undefined ? 'true' : 'false'
     );
 
-    const skip = skipIfNoChanges && project.modules.length === 0
+    const skip = skipIfNoChanges && (project.modules.length === 0 || project.changed.percentage === undefined);
     if (debugMode) core.info(`skip: ${skip}`)
     if (debugMode) core.info(`prNumber: ${prNumber}`)
-    if (project.changed.percentage !== undefined && !skip) {
+    if (prNumber != null && !skip) {
       const emoji = {
         pass: passEmoji,
         fail: failEmoji,

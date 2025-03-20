@@ -125,12 +125,12 @@ function action() {
             core.setOutput('coverage-changed-files', parseFloat(project['coverage-changed-files'].toFixed(2)));
             core.setOutput('coverage-changed-percentage', parseFloat(((_d = project.changed.percentage) !== null && _d !== void 0 ? _d : 0).toFixed(2)));
             core.setOutput('is-files-changed', project.changed.percentage !== undefined ? 'true' : 'false');
-            const skip = skipIfNoChanges && project.modules.length === 0;
+            const skip = skipIfNoChanges && (project.modules.length === 0 || project.changed.percentage === undefined);
             if (debugMode)
                 core.info(`skip: ${skip}`);
             if (debugMode)
                 core.info(`prNumber: ${prNumber}`);
-            if (project.changed.percentage !== undefined && !skip) {
+            if (prNumber != null && !skip) {
                 const emoji = {
                     pass: passEmoji,
                     fail: failEmoji,
