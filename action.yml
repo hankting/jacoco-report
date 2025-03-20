@@ -51,7 +51,7 @@ outputs:
   coverage-changed-percentage:
     description: 'The coverage percentage of the lines changed in the pull request'
   is-files-changed:
-    description: 'If there are any files changed in the pull request'
+    description: 'The flag to know if there are any java files modified in the pull request'
 
 runs:
   using: 'node20'
