@@ -27,8 +27,7 @@ For the orignal project go to [Madrapps/jacoco-report](https://github.com/Madrap
 - `coverage-overall` - The overall coverage of the project
 - `coverage-changed-files` - The total coverage of all changed files
 - `coverage-changed-percentage` - The percentage of coverage change in the modified files.
-- `is-files-changed:` - The flag to know if there are any java files being modified.
-
+- `is-files-changed` - The flag to know if there are any java files being modified.
 
 ## License
 
